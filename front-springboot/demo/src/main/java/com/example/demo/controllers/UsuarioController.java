@@ -24,6 +24,17 @@ public class UsuarioController {
         return usuario;
     }
 
+    @CrossOrigin
+    @RequestMapping(value = "usuarios")
+    public Usuario[] getUsuarios(){
+        Usuario usuario = new Usuario();
+        usuario.setNombre("Juan");
+        usuario.setApellido("Perez");
+        usuario.setEmail("asdasd@gmail.com");
+        usuario.setTelefono("12345678");
+        return new Usuario[]{usuario, usuario, usuario};
+    }
+
     @RequestMapping(value = "editarUsuario/{id}")
     public Usuario editUsuario(){
         Usuario usuario = new Usuario();
